@@ -1,0 +1,61 @@
+\chapter{Développement et implémentation}
+\clearpage
+\setcounter{secnumdepth}{3}
+
+\section{Introduction}
+Ce chapitre s'articule autour de cinq phases fondamentales décrivant le processus de conception de notre distribution Linux personnalisée :
+\begin{itemize}
+    \item Construction du système de base (\textit{Corbuild})
+    \item Intégration du noyau Linux et rendu du système amorçable (\textit{Kernel})
+    \item Enrichissement par l'ajout de composants complémentaires (\textit{Extendbuild})
+    \item Développement du gestionnaire de paquets \textit{Kraken}
+    \item Génération de l'image ISO bootable
+\end{itemize}
+
+Cette démarche séquentielle permet d'ordonnancer la complexité intrinsèque au développement d'un système d'exploitation autonome tout en justifiant nos orientations technologiques. Chaque étape fait l'objet d'une analyse détaillée mettant en exergue les défis techniques rencontrés et les solutions déployées.
+
+\begin{figure}[htbp]
+  \centering
+  \includesvg{dev_sections/dev_ressources/dev_process.svg}
+  \caption{Processus de développement de KRAKEN-OS}
+  \label{fig:dev-process}
+\end{figure}
+
+
+\clearpage
+
+
+                            %---------------------corebuild------------------------------------------
+\input{dev_sections/corebuild}
+\clearpage
+
+
+
+                        % ------------------kernel and make the system bootable------------------ ------------------
+\input{dev_sections/brain}
+\clearpage
+
+
+
+                        %----------------------------extends build------------ ------------------------------------
+
+\input{dev_sections/extendbuild}
+\clearpage
+                                            
+                                            
+                        %----------------------------------package manager---------------------------------------------
+\input{dev_sections/pkgM}
+\clearpage
+
+                                        %----------------------- bootable iso  --------------------------------------------------
+\input{dev_sections/iso}
+
+
+
+\section{Conclusion}
+Ce processus de développement rigoureux a permis de maîtriser l'ensemble de la chaîne de création d'une distribution GNU/Linux :
+TBD:
+ 
+
+
+

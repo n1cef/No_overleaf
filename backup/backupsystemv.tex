@@ -1,0 +1,31 @@
+
+
+Le comportement du programme \texttt{init} est contrôlé par le fichier \texttt{/etc/inittab}, qui organise l'initialisation autour de différents niveaux d'exécution (runlevels). Dans \textbf{KRAKEN OS}, ces niveaux sont utilisés comme suit :
+
+\begin{itemize}
+  \item \textbf{0} — arrêt du système (halt)
+  \item \textbf{1} — mode mono-utilisateur (Single user mode)
+  \item \textbf{2} — niveau définissable par l'utilisateur
+  \item \textbf{3} — mode multi-utilisateur complet (sans interface graphique)
+  \item \textbf{4} — niveau définissable par l'utilisateur
+  \item \textbf{5} — mode multi-utilisateur complet avec gestionnaire d'affichage
+  \item \textbf{6} — redémarrage du système (reboot)
+\end{itemize}
+
+Le niveau d'exécution par défaut dans KRAKEN est généralement le niveau 3 ou 5, selon que l'on souhaite démarrer avec ou sans interface graphique.
+
+\paragraph{Avantages}
+
+\begin{itemize}
+  \item Système établi et bien documenté.
+  \item Facile à personnaliser via des scripts shell.
+\end{itemize}
+
+\paragraph{Inconvénients}
+
+\begin{itemize}
+  \item Temps de démarrage plus long : un système KRAKEN de base démarre en 8 à 12 secondes, mesuré depuis le premier message du noyau jusqu'à l'invite de connexion. La connectivité réseau est généralement établie 2 secondes après l'invite.
+  \item Traitement séquentiel des services au démarrage : un retard dans un processus, comme la vérification du système de fichiers, retarde tout le démarrage.
+  
+  \item Ajout de nouveaux scripts nécessite une planification manuelle et une séquence d'exécution statique.
+\end{itemize}

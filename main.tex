@@ -1,0 +1,191 @@
+\documentclass[a4paper,12pt]{report}
+
+% Encodage et langues
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+\usepackage[french]{babel}
+\usepackage{listings}
+\lstset{
+  breaklines=true,
+  breakatwhitespace=false,
+  basicstyle=\ttfamily\small,
+  columns=fullflexible,
+}
+
+% Mise en page
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  top=2.5cm,
+  bottom=2.5cm,
+  left=2.5cm,
+  right=2.5cm
+}
+\usepackage{float} 
+\usepackage{xcolor}
+
+
+\usepackage{titlesec}
+\definecolor{oxfordblue}{RGB}{0,33,71}
+\definecolor{subsectionmaroon}{RGB}{128,0,0}
+\titleformat{\section}
+  {\color{oxfordblue}\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\color{subsectionmaroon}\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+%% Plain black formatting for titles
+%\titleformat{\section}
+% {\normalfont\Large\bfseries}{\thesection}{1em}{}
+%\titleformat{\subsection}
+ % {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+
+% Set all links to blue
+\usepackage[colorlinks=true, 
+            linkcolor=black,
+            citecolor=blue,
+            urlcolor=blue]{hyperref}
+\newcommand{\defensedate}{23 juin 2025}
+
+\usepackage{makecell}
+\usepackage{etoolbox}
+\usepackage{changepage}
+
+% Graphiques et figures
+\usepackage{graphicx}
+\usepackage{svg}
+\usepackage{placeins}
+\graphicspath{{images/}{images_pfe/}}
+
+% Tableaux
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[footnote]{acronym}
+
+% Listes et énumérations
+\usepackage{enumitem}
+
+% Titres - REMOVED COLOR DEFINITIONS
+
+
+% Bibliographie
+\usepackage[%
+  backend=biber,
+  style=numeric, 
+  sorting=nyt,
+  language=french,
+  autolang=other,
+  url=true,
+  doi=false,
+  isbn=false,
+  maxcitenames=1
+]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{xurl}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+
+% En-têtes et pieds de page
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\bfseries\nouppercase{\leftmark}}
+\rfoot{\bfseries\thepage}
+\renewcommand{\headrulewidth}{1pt}
+
+% Espace inter-paragraphe et interligne
+\usepackage{parskip}
+\renewcommand{\baselinestretch}{1.05}
+
+% Théorèmes, définitions, etc.
+\usepackage{amsthm,amssymb,amsmath}
+\newtheorem{definition}{Définition}[chapter]
+\newtheorem{theoreme}{Théorème}[chapter]
+\newtheorem{remarque}{Remarque}[chapter]
+\newtheorem{propriete}{Propriété}[chapter]
+\newtheorem{exemple}{Exemple}[chapter]
+
+% Mini-tocs
+\usepackage{minitoc}
+\setcounter{minitocdepth}{1}
+\mtcsettitle{minitoc}{Contenu}
+
+% Required for title page
+\usepackage{setspace}
+\usepackage{ifthen}
+\usepackage{datetime}
+
+% Document title and type
+\newcommand{\doctitle}{Développement d'une nouvelle distribution Linux dédiée aux scientifiques}
+\newcommand{\doctype}{MÉMOIRE DE FIN D’ETUDES} 
+
+% Informations sur l'université
+\newcommand{\department}{DÉPARTEMENT D’INFORMATIQUE ET
+DES COMMUNICATIONS}
+\newcommand{\degree}{DIPLÔME DE LICENCE EN}
+\newcommand{\major}{SCIENCE DE L’INFORMATIQUE}
+\newcommand{\defenseDate}{Année Universitaire : 2024-2025}
+
+% Thesis author
+\newcommand{\authorName}{NACEF KADDECHI}
+
+% Committee members
+\newcommand{\president}{M. Mohamed Tahar Bhiri}
+\newcommand{\reviewer}{M. Mohamed Mhiri}
+\newcommand{\supervisor}{M. Hedi Tmar}
+\newcommand{\cosupervisor}{M. Fares Ayadi}
+
+% PDF Metadata
+\newcommand{\keywords}{Linux, distribution, scientifique, open source}
+\newcommand{\university}{University of Sfax}
+\newcommand{\school}{Faculty of Sciences of Sfax}
+
+\begin{document}
+
+\dominitoc
+\include{others/Page-de-garde}
+\pagenumbering{Roman}
+\include{others/00-Note}
+\include{others/02-Remerciements}
+
+
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+\clearpage
+
+% Content of the report
+\cleardoublepage
+\pagenumbering{arabic}
+\include{others/04-Acronymes}
+\include{00-Introduction}
+\include{01-context_generale}
+
+% Architecture chapters
+\include{arch_section/arch-generale}
+\include{arch_section/compilation}
+\include{arch_section/arch_package_manager}
+\include{arch_section/arch_kernel_bootloader_bootscripts}
+
+% Development chapters
+\include{dev_sections/corebuild}
+\include{dev_sections/brain}
+\include{dev_sections/extendbuild}
+\include{dev_sections/pkgM}
+\include{dev_sections/iso}
+\include{others/03-Resume}
+
+% Bibliography
+\printbibliography[title={Références}]
+
+\clearpage
+\thispagestyle{empty}
+
+\end{document}

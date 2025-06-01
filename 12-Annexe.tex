@@ -1,0 +1,82 @@
+\begin{appendix}
+\chapter{annexe}
+
+
+%\chapter*{Compilation de software depuit le source} \label{annex:config} 
+\section{Configuration des packages} \label{sec:config-packages}
+\medskip
+    \noindent\textbf{a) Exemple de configuration de GCC (Autotools)}  
+    \begin{verbatim}
+../configure \
+  --prefix=/usr \
+  --disable-multilib \
+  --with-system-zlib \
+  --enable-default-pie \
+  --enable-default-ssp \
+  --enable-host-pie \
+  --disable-fixincludes \
+  --enable-languages=c,c++,fortran,go,objc,obj-c++,m2
+    \end{verbatim}
+    \textbf{Explications :}  \\
+    \texttt{--prefix} : répertoire d’installation  \\
+    \texttt{--disable}/\texttt{--enable} : (dés)activer des fonctionnalités  \\
+    \texttt{--with} : préciser un chemin ou une option système \\
+
+    \medskip
+    \noindent\textbf{b) Exemple de configuration de LLVM (CMake + Ninja)}  
+    \begin{verbatim}
+CC=gcc CXX=g++ \
+cmake -G Ninja .. \
+  -D CMAKE_INSTALL_PREFIX=/usr \
+  -D CMAKE_SKIP_INSTALL_RPATH=ON \
+  -D LLVM_ENABLE_FFI=ON \
+  -D CMAKE_BUILD_TYPE=Release \
+  -D LLVM_BUILD_LLVM_DYLIB=ON \
+  -D LLVM_LINK_LLVM_DYLIB=ON \
+  -D LLVM_ENABLE_RTTI=ON \
+  -D LLVM_TARGETS_TO_BUILD="host;AMDGPU" \
+  -D LLVM_BINUTILS_INCDIR=/usr/include \
+  -D LLVM_INCLUDE_BENCHMARKS=OFF \
+  -D CLANG_DEFAULT_PIE_ON_LINUX=ON \
+  -D CLANG_CONFIG_FILE_SYSTEM_DIR=/etc/clang
+    \end{verbatim}
+
+    \medskip
+  
+    \noindent\textbf{c) Exemple de configuration de GLib (Meson)}  
+    \begin{verbatim}
+meson setup builddir \
+  --prefix=/usr \
+  --buildtype=release \
+  -D introspection=disabled \
+  -D man=true
+    \end{verbatim}
+    \textbf{Explications :}  \\
+    \texttt{--buildtype} : mode de compilation (debug/release)\\
+
+
+
+%\chapter*{compilateur croise} \label{annex:crosscompiler} 
+\section{le triplet système} \label{sec:triplet}
+\medskip
+
+Le champ \textit{kernel} (noyau) et le champ \textit{os} (système d'exploitation) proviennent historiquement 
+d'un unique champ « système ». Une forme à trois champs reste valable aujourd'hui pour certains systèmes, 
+par exemple \texttt{x86\_64-unknown-freebsd}.\\
+Cependant, deux systèmes peuvent partager le même noyau tout 
+en étant trop différents pour utiliser le même triplet. \\
+Par exemple, Android sur un téléphone mobile est 
+radicalement différent d'Ubuntu sur un serveur ARM64, bien qu'ils utilisent le même type de processeur 
+(ARM64) et le même noyau (Linux).
+
+Sans émulation, il est impossible d'exécuter un binaire serveur sur un mobile, ou inversement. Le champ 
+« système » a donc été divisé en \textit{kernel} et \textit{os} pour lever les ambiguïtés. Dans nos exemples :
+\begin{itemize}
+    \item Android : \texttt{aarch64-unknown-linux-android}
+    \item Ubuntu : \texttt{aarch64-unknown-linux-gnu}
+\end{itemize}
+
+
+
+
+\end{appendix}

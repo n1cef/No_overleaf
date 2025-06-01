@@ -1,0 +1,106 @@
+
+\chapter*{Introduction générale} 
+\adjustmtc
+
+\addcontentsline{toc}{chapter}{Introduction générale}
+\markboth{Introduction générale}{Introduction générale}
+\label{chap:introduction}
+
+
+
+%\section*{Contexte}
+Une grande bataille oppose sans relâche le noyau Windows et le noyau Linux depuis plus de 30 ans.  
+Ces deux architectures pilotent le matériel physique des smartphones, ordinateurs, serveurs, jusqu’aux robots d’exploration spatiale.\\
+
+Leur divergence fondamentale est inscrite dans leur ADN :  
+\begin{itemize}  
+  \item \textbf{Noyau Windows} (hybride) : Privilégie un \textbf{contrôle centralisé} et une architecture homogène  
+  \item \textbf{Noyau Linux} (monolithique) : Mise sur la \textbf{modularité} et l’adaptabilité.\\
+\end{itemize}  
+
+Le futur vainqueur de cette bataille sera désigné par les scientifiques dont les travaux reposent fondamentalement sur la fiabilité et la flexibilité du système d’exploitation.\\  
+En d'autres termes, le système qui saura le mieux \textbf{orchestrer cette intelligence humaine}, en offrant un environnement ultime capable non seulement d’englober tous les domaines scientifiques, mais aussi d’assurer une prise en charge approfondie pour chaque domaine, tout en permettant une transposition instantanée entre eux, sera celui qui marquera l’avenir de la recherche scientifique.\\ \\
+
+
+\medskip
+
+%\subsection*{Motivation}
+ La  flexibilité architecturale  \textbf{modulaire} qui fait du noyau Linux  offre le terreau idéal pour lance ce projet  .  
+
+\textbf{Pourquoi ? \\}  
+Le chargement dynamique de modules permet une \textbf{transposition instantanée} du même système d’exploitation vers des environnements spécialisés pour des disciplines variées.  
+
+\medskip
+Imaginez :  
+\begin{itemize}  
+  \item le matin, un laboratoire de physique quantique ;  
+  \item l’après-midi, une station de développement web, mobile, cloud ou DevOps ;  
+  \item le soir, une plateforme de simulation mathématique.\\  
+\end{itemize}  
+\clearpage
+%\subsection*{Problématique}
+Malgré la puissance de cette modularité, la plupart des distributions didie au  grand publique ne l’exploitent pas pleinement.  
+
+Prenons l’exemple d’un ingénieur en informatique travaillant sur le développement d’un logiciel embarqué pour un composant mécanique précis. Il utilise un \textbf{environnement de développement}  (IDE, compilateurs, outils de débogage, etc.) sous une distribution Linux didie aux grand publique, comme Ubuntu ou Fedora \\
+Cependant, pour tester le comportement de sa solution, il doit visualiser physiquement le processus dans un 
+ \textbf{laboratoire de mécanique}, nécessitant des outils de simulation 3D ou de contrôle en temps réel.
+ 
+Pour valider les performances ou modéliser des aspects complexes, il se tourne vers un  \textbf{laboratoire mathématique}, où des outils de calcul symbolique ou de simulation numérique sont nécessaire
+
+Ces \textbf{allers-retours} entre environnements spécialisés soulignent l’absence d’un système capable de s’adapter \textbf{immédiatement} aux besoins de chaque discipline.\\
+\bigbreak
+%\subsection*{Objectifs}
+Notre projet vise à exploiter la modularité du noyau Linux pour développer \textbf{l’environnement ultime} destiné aux postes de travail scientifiques et académiques, avec :  
+\begin{itemize}  
+  \item une adaptation immédiate à toute discipline (mathématiques, physique, biologie, informatique, etc.) ;  
+  \item une transformation automatique en stations de travail préconfigurées pour chaque spécialité ;  
+  \item une philosophie centrée sur les besoins de recherche et les exigences professionnelles des utilisateurs.  
+\end{itemize}
+
+
+
+
+
+
+
+\clearpage
+
+
+
+
+\section*{Organisation du mémoire}
+
+Ce mémoire est structuré en trois grandes parties, réparties sur dix chapitres.
+
+\medskip
+
+\begin{description}
+  \item[\textbf{Première partie : Contexte, problématique et méthodologie(Chapitres 1)}]  
+ Cette première partie présente le cadre général du projet, la société, le contexte du stage ainsi que la problématique identifiée. Une analyse de l’existant est également réalisée, suivie par la présentation de la solution proposée et de la méthodologie adoptée
+\bigbreak
+  \item[\textbf{Deuxième partie : Architecture et aspects théoriques (Chapitres 2 à 5)\\}]  
+  Cette partie fournit les fondements techniques et conceptuels du projet, nécessaires à la compréhension des choix de conception effectués.
+  \begin{itemize}
+    \item \texttt{Chapitre 2 :} Présentation de l’architecture globale, des standards et des normes retenues.
+    \item \texttt{Chapitre 3 :} Les aspects et les mécanismes fondamentaux de la compilation.
+    \item \texttt{Chapitre 4 :} Étude des concepts et des mécanismes fondamentaux liés aux gestionnaires de paquets.
+    \item \texttt{Chapitre 5 :} Analyse de l’architecture et des choix techniques liés au noyau, au bootloader et aux scripts d’amorçage.
+  \end{itemize}
+  
+\bigbreak
+  \item[\textbf{Troisième partie : Développement et implémentation (Chapitres 6 à 10)\\}]  
+  Cette dernière partie est dédiée à la réalisation pratique, depuis la phase de développement jusqu’à la génération de l’image ISO.
+  \begin{itemize}
+    \item \texttt{Chapitre 6 :} Création d’un système de base minimal et fonctionnel.
+    \item \texttt{Chapitre 7 :} Rendre le système minimal bootable via la configuration du noyau et du chargeur d’amorçage.
+    \item \texttt{Chapitre 8 :} Ajout de composants avancés pour rendre le système plus complet et convivial.
+    \item \texttt{Chapitre 9 :} Développement et intégration de notre  gestionnaire de paquets.
+    \item \texttt{Chapitre 10 :} Création de l’image ISO bootable de la distribution.
+  \end{itemize}
+\end{description}
+
+\medskip
+
+
+
+

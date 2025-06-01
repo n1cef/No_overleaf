@@ -1,0 +1,18 @@
+
+
+
+
+
+
+To understand an OS is to understand the soul of a computer
+
+
+
+
+
+
+
+Because an operating system is large and complex, it must be created piece by piece. Each of these pieces should be a well-delineated
+portion of the system, with carefully defined inputs, outputs, and functions.
+
+

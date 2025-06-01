@@ -1,0 +1,52 @@
+<!-- Save as dev_process.svg -->
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="400" y="50" text-anchor="middle" font-family="Arial" font-size="24" fill="#2E86C1">Processus de développement de KRAKEN-OS</text>
+  
+  <!-- Curved Timeline Path -->
+  <path d="M 100 150 Q 250 100, 400 150 C 550 200, 650 180, 700 150" 
+        stroke="#E67E22" 
+        stroke-width="3" 
+        fill="none" 
+        stroke-dasharray="5 5"/>
+
+  <!-- Phase 1: Corbuild -->
+  <g transform="translate(100,150)">
+    <circle r="40" fill="#2E86C1"/>
+    <image href="dev_sections/dev_ressources/corbuild-icon.png" x="-25" y="-25" width="50" height="50"/>
+    <text y="60" text-anchor="middle" font-family="Arial">Corbuild</text>
+    <text y="80" text-anchor="middle" font-family="Arial" font-size="12">Système de base</text>
+  </g>
+
+  <!-- Phase 2: Kernel -->
+  <g transform="translate(250,100)">
+    <circle r="40" fill="#2E86C1"/>
+    <image href="kernel-icon.png" x="-25" y="-25" width="50" height="50"/>
+    <text y="60" text-anchor="middle" font-family="Arial">Kernel</text>
+    <text y="80" text-anchor="middle" font-family="Arial" font-size="12">Noyau Linux</text>
+  </g>
+
+  <!-- Phase 3: Extendbuild -->
+  <g transform="translate(400,150)">
+    <circle r="40" fill="#E67E22"/>
+    <image href="extendbuild-icon.png" x="-25" y="-25" width="50" height="50"/>
+    <text y="60" text-anchor="middle" font-family="Arial">Extendbuild</text>
+    <text y="80" text-anchor="middle" font-family="Arial" font-size="12">Enrichissement</text>
+  </g>
+
+  <!-- Phase 4: Kraken -->
+  <g transform="translate(550,200)">
+    <circle r="40" fill="#E67E22"/>
+    <image href="kraken-icon.png" x="-25" y="-25" width="50" height="50"/>
+    <text y="60" text-anchor="middle" font-family="Arial">Kraken</text>
+    <text y="80" text-anchor="middle" font-family="Arial" font-size="12">Gestion de paquets</text>
+  </g>
+
+  <!-- Phase 5: ISO -->
+  <g transform="translate(700,150)">
+    <circle r="40" fill="#2E86C1"/>
+    <image href="iso-icon.png" x="-25" y="-25" width="50" height="50"/>
+    <text y="60" text-anchor="middle" font-family="Arial">ISO</text>
+    <text y="80" text-anchor="middle" font-family="Arial" font-size="12">Image Bootable</text>
+  </g>
+</svg>
